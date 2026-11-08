@@ -1,0 +1,497 @@
+
+/* VoyageFlow - Clean and Simple Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fafafa;
+    color: #292929;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Hide decorative backgrounds */
+
+.page-bg,
+.gradient-circle {
+    display: none !important;
+}
+
+/* Main Layout */
+
+.app-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 50px 24px;
+}
+
+/* Header */
+
+.hero-section {
+    text-align: left;
+    margin-bottom: 35px;
+}
+
+.badge {
+    display: inline-block;
+    color: #555;
+    background: #f0f0f0;
+    padding: 5px 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.hero-section p {
+    font-size: 15px;
+    color: #666;
+    max-width: 700px;
+    line-height: 1.7;
+}
+
+/* Main Cards */
+
+.planner-card,
+.workflow-section,
+.result-section,
+.approval-section {
+    background: #fff;
+    padding: 28px;
+    border: 1px solid #e5e5e5;
+    border-radius: 9px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.025);
+}
+
+.workflow-section,
+.result-section,
+.approval-section {
+    margin-top: 22px;
+}
+
+/* Section Headings */
+
+.card-header,
+.workflow-header,
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.card-header h2,
+.workflow-header h2,
+.result-header h2,
+.approval-content h2 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #292929;
+    margin-bottom: 6px;
+}
+
+.card-header p,
+.result-header p,
+.approval-content p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Status */
+
+.status-pill,
+.guardrail-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #f3f3f3;
+    color: #555;
+    border: 1px solid #e6e6e6;
+    padding: 6px 11px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    background: #666;
+    border-radius: 50%;
+}
+
+.guardrail-badge.blocked {
+    background: #eeeeee;
+    color: #333;
+}
+
+/* Travel Input */
+
+.input-area {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+textarea {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    min-height: 125px;
+    padding: 15px;
+    border: 1px solid #d8d8d8;
+    border-radius: 6px;
+    background: #fff;
+    color: #292929;
+    font: 14px/1.6 Arial, sans-serif;
+    resize: vertical;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #888;
+}
+
+textarea::placeholder {
+    color: #999;
+}
+
+/* Buttons */
+
+button {
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+#sendBtn {
+    height: 46px;
+    min-width: 150px;
+    padding: 0 20px;
+    background: #333;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+#sendBtn:hover {
+    background: #222;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Quick Suggestions */
+
+.quick-prompts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 18px;
+}
+
+.quick-prompts button {
+    background: #fff;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px 13px;
+    font-size: 13px;
+}
+
+.quick-prompts button:hover {
+    background: #f5f5f5;
+}
+
+/* Agent Workflow */
+
+.eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.supervisor-reasoning {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+.agent-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.agent-chip {
+    background: #f5f5f5;
+    color: #444;
+    border: 1px solid #e5e5e5;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* Results */
+
+.result-actions,
+.approval-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.copy-btn,
+.download-btn,
+.approve-btn,
+.revise-btn {
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+.copy-btn,
+.revise-btn {
+    background: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.download-btn,
+.approve-btn {
+    background: #333;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.copy-btn:hover,
+.revise-btn:hover {
+    background: #f5f5f5;
+}
+
+.download-btn:hover,
+.approve-btn:hover {
+    background: #222;
+}
+
+/* Report Content */
+
+.pdf-content,
+.result-box {
+    background: #fff;
+    color: #333;
+    padding: 0;
+    border-radius: 0;
+    overflow-wrap: anywhere;
+}
+
+.pdf-title {
+    display: none;
+}
+
+.result-box h1,
+.result-box h2,
+.result-box h3 {
+    color: #292929;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 22px 0 10px;
+    line-height: 1.4;
+}
+
+.result-box h1 {
+    font-size: 24px;
+}
+
+.result-box h2 {
+    font-size: 20px;
+}
+
+.result-box h3 {
+    font-size: 17px;
+}
+
+.result-box p {
+    margin-bottom: 13px;
+    line-height: 1.8;
+}
+
+.result-box ul,
+.result-box ol {
+    margin: 12px 0 18px 25px;
+}
+
+.result-box li {
+    margin-bottom: 7px;
+}
+
+.result-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+}
+
+.result-box th,
+.result-box td {
+    padding: 11px;
+    border: 1px solid #e3e3e3;
+    text-align: left;
+}
+
+.result-box th {
+    background: #f7f7f7;
+}
+
+/* Approval */
+
+.approval-section {
+    display: flex;
+    gap: 18px;
+}
+
+.approval-icon {
+    font-size: 24px;
+}
+
+.approval-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.feedback-input {
+    min-height: 95px;
+    margin-top: 15px;
+}
+
+.approval-actions {
+    margin-top: 15px;
+}
+
+/* Errors */
+
+.error-box {
+    margin-top: 18px;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Loader */
+
+.loader {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ddd;
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Footer */
+
+footer {
+    padding: 30px 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .app-container {
+        padding: 25px 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 28px;
+    }
+
+    .planner-card,
+    .workflow-section,
+    .result-section,
+    .approval-section {
+        padding: 20px;
+    }
+
+    .input-area,
+    .card-header,
+    .workflow-header,
+    .result-header,
+    .approval-section {
+        flex-direction: column;
+    }
+
+    #sendBtn {
+        width: 100%;
+    }
+
+    .result-actions {
+        width: 100%;
+    }
+}
+
+/* Print Report */
+
+@media print {
+    .hero-section,
+    .planner-card,
+    .workflow-section,
+    .approval-section,
+    .result-actions,
+    footer,
+    #threadInfo {
+        display: none !important;
+    }
+
+    .result-section {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .pdf-title {
+        display: block;
+    }
+}
